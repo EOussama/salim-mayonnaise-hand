@@ -4,10 +4,11 @@
   "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
   "main": "src/main.ts",
   "scripts": {
-    "start": "node dist/salim-the-mayonnaise-finger.js",
-    "lint": "npx tslint -c tslint.json src/**/*.ts",
-    "build": "npx tsc --project tsconfig.json",
-    "watch": "npm run build -- -w"
+    "start": "node ./dist/main.js",
+    "lint": "npx tslint -c ./tslint.json ./src/**/*.ts",
+    "build": "npx tsc --project ./tsconfig.json",
+    "watch": "npm run build -- -w",
+    "clean": "rm -rf ./dist"
   },
   "repository": {
     "type": "git",
