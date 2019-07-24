@@ -1,13 +1,11 @@
-const Discord = require('discord.js');
-const token = '';
+/**
+ * @name salim-the-mayonnaise-finger
+ * @description A Discord bot that documents our struggle with finding the perfect place for lunch.
+ * @author EOussama
+ * @license MIT
+ * @version 0.0.1
+ */
 
-const client = new Discord.Client();
+import { Bot } from './classes/Bot';
 
-client.on('ready', () => {
-  console.log('Started');
-
-  client.channels.find(x => x.name === 'general').send('Fayn a drari, lyoma 3atjiw 3andna wla? rah ba9i 3lina lkra dyal had chhar');
-});
-
-client.login(token);
-
+(() => Bot.init())();
