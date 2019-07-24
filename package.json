@@ -21,6 +21,12 @@
   },
   "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme",
   "dependencies": {
-    "discord.js": "^11.5.1"
+    "discord.js": "^11.5.1",
+    "dotenv-extended": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
   }
 }
