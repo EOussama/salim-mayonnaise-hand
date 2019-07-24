@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node dist/salim-the-mayonnaise-finger.js",
     "lint": "npx tslint -c tslint.json src/**/*.ts",
-    "build": "npx tsc --project src/**/*.ts",
+    "build": "npx tsc --project tsconfig.json",
     "watch": "npm run build -- -w"
   },
   "repository": {
