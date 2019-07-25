@@ -8,4 +8,16 @@
 
 import { Bot } from './classes/Bot';
 
-(() => Bot.init())();
+import * as dotenv from 'dotenv-extended';
+
+(() => {
+
+	// Loading the environment variables
+	dotenv.load();
+
+	// Getting the token
+	const token = process.env.TOKEN;
+
+	// Bootstraping the bot
+	Bot.init(token);
+})();

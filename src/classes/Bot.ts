@@ -1,5 +1,4 @@
 import * as Discord from 'discord.js';
-import * as dotenv from 'dotenv-extended';
 
 /**
  * The core of the bot
@@ -9,35 +8,30 @@ export class Bot {
 	/**
 	 * Initializes the bot
 	 */
-	public static init(): void {
+	public static async init(token: string | undefined): Promise<void> {
 
-		// Loading the environment variables
-		dotenv.load();
+		// Checking the validity of the token
+		if (token) {
 
-		// Instantiating the client
-		const client = new Discord.Client();
+			// Instantiating the client
+			const client = new Discord.Client();
 
-		// Logging the bot in
-		this.login(client);
+			// Logging the bot in
+			client.login(token);
 
-		// Subscribing to the connection event
-		client.on('ready', () => {
+			// Subscribing to the connection event
+			client.on('ready', () => {
 
-			console.log('Salim has successfully connected!');
-		});
-	}
+				// Getting the general channel
+				const general = client.channels.get('596827915153571882') as Discord.TextChannel;
 
-	/**
-	 * Logs the bot in
-	 */
-	public static login(client: any): void {
+				// Sending a welcoming message
+				general.send('Salim has dipped his finger in mayonnaise! :salim:');
+			});
+		} else {
 
-		console.log('Salim has dipped his finger in mayonnaise!');
-
-		// Getting the token
-		const token = process.env.TOKEN;
-
-		// Returning the connection
-		client.login(token);
+			// Sending an error message
+			console.error(`[STMF]: Invalid token!`);
+		}
 	}
 }
