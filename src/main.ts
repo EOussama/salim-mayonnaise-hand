@@ -7,7 +7,6 @@
  */
 
 import { Bot } from './classes/Bot';
-
 import * as dotenv from 'dotenv-extended';
 
 (() => {
