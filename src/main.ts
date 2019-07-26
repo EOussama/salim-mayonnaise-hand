@@ -6,8 +6,8 @@
  * @version 0.0.1
  */
 
-import { Bot } from './classes/Bot';
 import * as dotenv from 'dotenv-extended';
+import { Bot } from './core/bot/Bot';
 
 (() => {
 

@@ -1,4 +1,5 @@
 import * as Discord from 'discord.js';
+import { Emoji } from './constants/Emoji';
 
 /**
  * The core of the bot
@@ -25,8 +26,12 @@ export class Bot {
 				// Getting the general channel
 				const general = client.channels.get('596827915153571882') as Discord.TextChannel;
 
+				// Getting salim's emoji
+				const emoji1 = client.emojis.find((e) => e.name === Emoji.salim1).toString();
+				const emoji2 = client.emojis.find((e) => e.name === Emoji.salim2).toString();
+
 				// Sending a welcoming message
-				general.send('Salim has dipped his finger in mayonnaise! :salim:');
+				general.send(`${emoji1} ${emoji2} Salim has dipped his finger in mayonnaise ${emoji2} ${emoji1}`);
 			});
 		} else {
 
