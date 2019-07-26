@@ -37,8 +37,8 @@ export function processCommand(message: Message, command: string | undefined, ar
 				let output: string = '';
 
 				// Putting together the outpur
-				for (let i = 0; i < iterations; i++) {
-					output += 'pong ' + output;
+				for (let i = 0; i <= iterations; i++) {
+					output += 'pong ';
 				}
 
 				// Sending the message
