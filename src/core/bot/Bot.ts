@@ -1,5 +1,6 @@
 import * as Discord from 'discord.js';
 import { Emoji } from './constants/Emoji';
+import { processCommand } from './utils/commands';
 
 /**
  * The core of the bot
@@ -32,6 +33,28 @@ export class Bot {
 
 				// Sending a welcoming message
 				general.send(`${emoji1} ${emoji2} Salim has dipped his finger in mayonnaise ${emoji2} ${emoji1}`);
+			});
+
+			// Subscribing to the message event
+			client.on('message', (message) => {
+
+				const prefix = '/';
+
+				// Detecting if a command was issued
+				if (message.content.startsWith(prefix) && !message.author.bot) {
+
+					// Extracting the arguments
+					const args = message.content
+						.slice(prefix.length)
+						.split(' ')
+						.map((arg) => arg.toLocaleLowerCase());
+
+					// Getting the command
+					const cmd = args.shift();
+
+					// Processing the command
+					processCommand(cmd, args);
+				}
 			});
 		} else {
 
