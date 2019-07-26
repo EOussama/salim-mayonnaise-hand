@@ -54,7 +54,7 @@ export class Bot {
 					const cmd = args.shift();
 
 					// Processing the command
-					processCommand(cmd, args);
+					processCommand(message, cmd, args);
 				}
 			});
 		} else {
