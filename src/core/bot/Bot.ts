@@ -38,6 +38,7 @@ export class Bot {
 			// Subscribing to the message event
 			client.on('message', (message) => {
 
+				// Defining the prefix
 				const prefix = '/';
 
 				// Detecting if a command was issued
