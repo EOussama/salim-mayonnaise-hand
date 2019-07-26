@@ -31,7 +31,12 @@ export class Rating {
 	 * @param hygiene The hygiene's rating
 	 * @param service The service's rating
 	 */
-	constructor(price: number = 0, quality: number = 0, hygiene: number = 0, service: number = 0) {
+	constructor(
+		price: number = 0,
+		quality: number = 0,
+		hygiene: number = 0,
+		service: number = 0,
+	) {
 		this.price = price;
 		this.quality = quality;
 		this.hygiene = hygiene;

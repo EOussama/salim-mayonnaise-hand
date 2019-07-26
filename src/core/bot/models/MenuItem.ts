@@ -33,7 +33,12 @@ export class MenuItem {
 	 * @param type The type of the item
 	 * @param picture The picture of the item
 	 */
-	constructor(name: string = '', price: number = 0, type: MenuItemType = MenuItemType.Food, picture: string = '') {
+	constructor(
+		name: string = '',
+		price: number = 0,
+		type: MenuItemType = MenuItemType.Food,
+		picture: string = '',
+	) {
 		this.name = name;
 		this.price = price;
 		this.type = type;
