@@ -73,7 +73,15 @@ export function processCommand(message: Message, command: string | undefined, ar
 				// Sending the message
 				message.channel.send(output);
 			}
+
 			break;
+		}
+
+		// Catching all invalid commands
+		default: {
+
+			// Alerting the user about the invalid iterations argument
+			message.channel.send(`“**/${command}**” is not a valid command!`);
 		}
 	}
 }
