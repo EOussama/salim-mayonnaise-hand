@@ -55,7 +55,7 @@ export function processCommand(message: Message, command: string | undefined, ar
 			const iterations: number = args.length === 0 ? 1 : parseInt(args[0], 10);
 
 			// Checking the validity of the iteration argument
-			if (iterations <= 0) {
+			if (!iterations || isNaN(iterations) || iterations <= 0) {
 
 				// Alerting the user about the invalid iterations argument
 				message.channel.send('The iterations argument must be a valid positive number!');
@@ -64,13 +64,14 @@ export function processCommand(message: Message, command: string | undefined, ar
 				// Preparing the output variable
 				let output: string = '';
 
-				// Putting together the outpur
-				for (let i = 0; i <= iterations; i++) {
-					output += 'pong ';
-				}
+				// Putting together the output
+				output = new Array(iterations)
+					.fill('pong')
+					.join(' ')
+					.substring(0, 2000);
 
 				// Sending the message
-				message.channel.send(output.substring(0, 2000));
+				message.channel.send(output);
 			}
 			break;
 		}
