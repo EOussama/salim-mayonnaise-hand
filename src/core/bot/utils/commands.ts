@@ -12,13 +12,41 @@ export function processCommand(message: Message, command: string | undefined, ar
 	switch (command) {
 
 		/**
+		 * Command: about
+		 *
+		 * Usage:
+		 * 	-	/about
+		 *
+		 * Description: Displays general information about the bot
+		 */
+		case 'about': {
+			console.log('/about');
+			break;
+		}
+
+		/**
+		 * Command: help
+		 *
+		 * Usage:
+		 * 	-	/help
+		 *
+		 * Description: Displays a generic help manual about how to properly use the bot
+		 */
+		case 'help': {
+			console.log('/help');
+			break;
+		}
+
+		/**
 		 * Command: ping
+		 *
 		 * Arguments:
 		 * 	-	iterations: number
+		 *
 		 * Usage:
 		 * 	-	/ping
 		 * 	- /ping 3
-		 * 	- /ping 7
+		 *
 		 * Description: Returns “pong” respectively at a given iteration
 		 */
 		case 'ping': {
