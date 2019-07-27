@@ -62,10 +62,7 @@ export function processCommand(message: Message, command: string | undefined, ar
 			} else {
 
 				// Preparing the output variable
-				let output: string = '';
-
-				// Putting together the output
-				output = new Array(iterations)
+				const output: string = new Array(iterations)
 					.fill('pong')
 					.join(' ')
 					.substring(0, 2000);
