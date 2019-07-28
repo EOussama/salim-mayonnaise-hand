@@ -1,7 +1,7 @@
 import { Message } from 'discord.js';
 import InvalidCommandError from './../errors/InvalidCommandError';
+import SalimError from './../errors/SalimError';
 import * as Args from './args';
-import SalimError from '../errors/SalimError';
 
 /**
  * Processes a said command
@@ -63,12 +63,13 @@ export const processCommand = (message: Message, command: string | undefined, ar
 				const iterations: number = parseInt(Args.getArg(args, 0, 1), 10);
 				const input: string = Args.getArg(args, 1).trim();
 
-				// Validating the arguments
+				// Validating the iteration argument
 				Args.validateArgs(
 					iterations && !isNaN(iterations) && iterations > 0,
 					'The iterations argument must be a valid positive number!',
 				);
 
+				// Validating the input argument
 				Args.validateArgs(
 					input && input.length > 0,
 					'You must provide a valid input argument!',
