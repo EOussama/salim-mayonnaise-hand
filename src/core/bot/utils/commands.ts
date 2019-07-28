@@ -1,3 +1,4 @@
+import * as Args from './args';
 import { Message } from 'discord.js';
 
 /**
@@ -7,8 +8,9 @@ import { Message } from 'discord.js';
  * @param command The command to process
  * @param args The arguments of the command
  */
-export function processCommand(message: Message, command: string | undefined, args: string[]) {
+export const processCommand = (message: Message, command: string | undefined, args: string[]): void => {
 
+	// Checking the command
 	switch (command) {
 
 		/**
@@ -38,38 +40,62 @@ export function processCommand(message: Message, command: string | undefined, ar
 		}
 
 		/**
-		 * Command: ping
+		 * Command: echo
 		 *
 		 * Arguments:
 		 * 	-	iterations: number
+		 * 	-	input: string
 		 *
 		 * Usage:
-		 * 	-	/ping
-		 * 	- /ping 3
+		 * 	- /echo 3 salim
 		 *
-		 * Description: Returns “pong” respectively at a given iteration
+		 * Description: Returns and output respectively at a given iteration
 		 */
-		case 'ping': {
+		case 'echo': {
 
 			// Sanitizing the arguments
-			const iterations: number = args.length === 0 ? 1 : parseInt(args[0], 10);
+			const iterations: number = parseInt(Args.getArg(args, 0, 1), 10);
+			const input: string = Args.getArg(args, 1).trim();
 
 			// Checking the validity of the iteration argument
 			if (!iterations || isNaN(iterations) || iterations <= 0) {
 
 				// Alerting the user about the invalid iterations argument
 				message.channel.send('The iterations argument must be a valid positive number!');
+
+				// Checking the validity of the input
+			} else if (!input || input.length === 0) {
+
+				// Alerting the user about the invalid iterations argument
+				message.channel.send('You must provide a valid input argument!');
 			} else {
 
 				// Preparing the output variable
 				const output: string = new Array(iterations)
-					.fill('pong')
+					.fill(input)
 					.join(' ')
 					.substring(0, 2000);
 
 				// Sending the message
 				message.channel.send(output);
 			}
+
+			break;
+		}
+
+
+		/**
+		 * Command: ping
+		 *
+		 * Usage:
+		 * 	-	/ping
+		 *
+		 * Description: Returns “pong”
+		 */
+		case 'ping': {
+
+			// Sending the message
+			message.channel.send('pong');
 
 			break;
 		}
