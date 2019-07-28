@@ -58,17 +58,10 @@ export const processCommand = (message: Message, command: string | undefined, ar
 			const input: string = Args.getArg(args, 1).trim();
 
 			// Checking the validity of the iteration argument
-			if (!iterations || isNaN(iterations) || iterations <= 0) {
-
-				// Alerting the user about the invalid iterations argument
-				message.channel.send('The iterations argument must be a valid positive number!');
-
-				// Checking the validity of the input
-			} else if (!input || input.length === 0) {
-
-				// Alerting the user about the invalid iterations argument
-				message.channel.send('You must provide a valid input argument!');
-			} else {
+			if (
+				Args.validateArgs(iterations && !isNaN(iterations) && iterations > 0, 'The iterations argument must be a valid positive number!', message.channel) &&
+				Args.validateArgs(input && input.length > 0, 'You must provide a valid input argument!', message.channel)
+			) {
 
 				// Preparing the output variable
 				const output: string = new Array(iterations)

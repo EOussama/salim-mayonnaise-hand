@@ -1,4 +1,4 @@
-import { MenuItemType } from '../enums/MenuItemType';
+import { MenuItemTypes } from '../enums/MenuItemType';
 
 /**
  * The Menu-item's class
@@ -18,7 +18,7 @@ export class MenuItem {
 	/**
 	 * The type of the item
 	 */
-	public type: MenuItemType;
+	public type: MenuItemTypes;
 
 	/**
 	 * The picture of the item
@@ -36,7 +36,7 @@ export class MenuItem {
 	constructor(
 		name: string = '',
 		price: number = 0,
-		type: MenuItemType = MenuItemType.Food,
+		type: MenuItemTypes = MenuItemTypes.Food,
 		picture: string = '',
 	) {
 		this.name = name;
