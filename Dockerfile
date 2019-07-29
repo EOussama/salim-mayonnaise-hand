@@ -14,7 +14,6 @@ RUN npm install
 COPY ./ ./
 
 # Building the app
-
 RUN npm run build
 
 # Exposing a default port
