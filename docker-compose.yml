@@ -1,5 +1,8 @@
 version: '3'
 services:
   bot:
-    build: .
+    image: eoussama/salim-the-mayonnaise-finger:bot-0.0.1
+    build:
+      context: .
+      dockerfile: Dockerfile
     env_file: .env
