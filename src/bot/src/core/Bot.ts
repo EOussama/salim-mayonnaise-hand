@@ -1,5 +1,6 @@
 import * as Discord from 'discord.js';
 import { Emoji } from './constants/Emoji';
+import { Config } from './types/Config';
 import { processCommand } from './utils/commands';
 
 /**
@@ -10,7 +11,7 @@ export class Bot {
 	/**
 	 * Initializes the bot
 	 */
-	public static async init(token: string | undefined): Promise<void> {
+	public static async init(token: string | undefined, config: Config): Promise<void> {
 
 		// Checking the validity of the token
 		if (token) {
@@ -25,7 +26,7 @@ export class Bot {
 			client.on('ready', () => {
 
 				// Getting the general channel
-				const general = client.channels.get('596827915153571882') as Discord.TextChannel;
+				const general = client.channels.get(config.channels.general) as Discord.TextChannel;
 
 				// Getting salim's emoji
 				const emoji1 = client.emojis.find((e) => e.name === Emoji.salim1).toString();

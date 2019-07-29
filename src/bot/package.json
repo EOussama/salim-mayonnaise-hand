@@ -4,6 +4,10 @@
   "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
   "main": "src/main.ts",
   "scripts": {
+    "start": "node ./dist/main.js",
+    "lint": "npx tslint -c ./tslint.json ./src/**/*.ts",
+    "build": "npx tsc --project ./tsconfig.json",
+    "watch": "npm run build -- -w",
     "clean": "rm -rf ./dist"
   },
   "repository": {
@@ -19,5 +23,14 @@
   "bugs": {
     "url": "https://github.com/EOussama/salim-the-mayonnaise-finger/issues"
   },
-  "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme"
+  "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme",
+  "dependencies": {
+    "discord.js": "^11.5.1",
+    "dotenv-extended": "^2.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^12.6.8",
+    "tslint": "^5.18.0",
+    "typescript": "^3.5.3"
+  }
 }
