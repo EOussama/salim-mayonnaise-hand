@@ -5,10 +5,10 @@
   "main": "src/main.ts",
   "scripts": {
     "start": "node ./dist/main.js",
-    "lint": "npx tslint -c ./tslint.json ./src/**/*.ts",
     "build": "npx tsc --project ./tsconfig.json",
     "watch": "npm run build -- -w",
-    "clean": "rm -rf ./dist"
+    "lint": "npx tslint -c ./tslint.json ./src/**/*.ts",
+    "clean": "rm -rf ./build"
   },
   "repository": {
     "type": "git",

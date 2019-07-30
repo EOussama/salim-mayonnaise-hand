@@ -8,5 +8,6 @@ export type Config = {
 	},
 	channels: {
 		general: string,
+		salim: string,
 	},
 };

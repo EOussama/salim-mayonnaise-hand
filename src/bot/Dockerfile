@@ -2,7 +2,7 @@
 FROM node:alpine
 
 # Specifying a work directory
-WORKDIR /usr/salim/
+WORKDIR /usr/salim/bot/
 
 # Copying the dependencies
 COPY ./package.json /.

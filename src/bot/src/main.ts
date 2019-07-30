@@ -22,6 +22,7 @@ import { Config } from './core/types/Config';
 	const config: Config = {
 		channels: {
 			general: process.env.CHANNEL_GENERAL || '',
+			salim: process.env.CHANNEL_SALIM || '',
 		},
 		meta: {
 			name: process.env.META_NAME || '',
