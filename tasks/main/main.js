@@ -1,12 +1,12 @@
 /**
- * The Discord bot's main task
+ * The package's main task
  */
 
 // Importing the dependencies
 var version = require("./version");
 
 /**
- * Updates the Discord bot's version
+ * Updates the package's version
  * 
  * @param {string} mode The mode of the version update (patch, minor, major, 1.36.3, 5.6.1...)
  */

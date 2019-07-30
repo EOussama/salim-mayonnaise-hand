@@ -4,6 +4,8 @@
   "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
   "main": "src/bot/src/main.ts",
   "scripts": {
+    "version:main": "npx gulp version:main",
+    "version:bot": "npx gulp version:bot",
     "clean": "rm -rf ./dist"
   },
   "repository": {
@@ -22,9 +24,7 @@
   "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme",
   "devDependencies": {
     "gulp": "^4.0.2",
-    "gulp-bump": "^3.1.3"
-  },
-  "dependencies": {
+    "gulp-bump": "^3.1.3",
     "gulp-replace": "^1.0.0"
   }
 }

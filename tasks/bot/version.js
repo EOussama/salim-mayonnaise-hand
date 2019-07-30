@@ -2,10 +2,16 @@
  * The versioning process of the Discord bot
  */
 
+// Importing the dependencies
 var path = require('path');
 var gulp = require('gulp');
 var bump = require('gulp-bump');
 var replace = require('gulp-replace');
+
+// Resolving the paths
+var packageDir = path.resolve(__dirname, './../../src/bot/');
+var packageFiles = path.resolve(packageDir, 'package*.json');
+var envFile = path.resolve(packageDir, '.env');
 
 /**
  * Bumps the version
@@ -13,11 +19,6 @@ var replace = require('gulp-replace');
  * @param {string} mode The update mode (patch, minor, major)
  */
 module.exports.sem = function (mode) {
-
-  // Resolving the paths
-  var packageDir = path.resolve(__dirname, './../../src/bot/');
-  var packageFiles = path.resolve(packageDir, 'package*.json');
-  var envFile = path.resolve(packageDir, '.env');
 
   // Getting the current version
   var currVersion = require(path.resolve(packageDir, 'package.json')).version;
@@ -37,11 +38,6 @@ module.exports.sem = function (mode) {
  * @param {string} version The version to bump to
  */
 module.exports.specific = function (version) {
-
-  // Resolving the paths
-  var packageDir = path.resolve(__dirname, './../../src/bot/');
-  var packageFiles = path.resolve(packageDir, 'package*.json');
-  var envFile = path.resolve(packageDir, '.env');
 
   // Proccessing the task
   return gulp.src(envFile)
