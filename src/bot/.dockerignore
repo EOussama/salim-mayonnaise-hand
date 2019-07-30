@@ -1,5 +1,15 @@
+# Excluding docker specific files
+*Dockerfile*
+*docker-compose*
+
+# Excluding git
+.git
+
 # Excluding node_modules
 node_modules
+
+# Excluding the lock files
+package-lock.json
 
 # Excluding the env file
 .env
