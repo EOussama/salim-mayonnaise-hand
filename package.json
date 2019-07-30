@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/EOussama/salim-the-mayonnaise-finger/issues"
   },
-  "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme"
+  "homepage": "https://github.com/EOussama/salim-the-mayonnaise-finger#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-bump": "^3.1.3"
+  }
 }
