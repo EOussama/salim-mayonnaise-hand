@@ -1,5 +1,9 @@
 version: '3'
 services:
+  mongodb:
+    image: mongo
+    ports:
+      - 3600:27017
   bot:
     image: eoussama/salim-the-mayonnaise-finger:bot-0.0.1
     build:
