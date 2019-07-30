@@ -6,7 +6,7 @@
   "scripts": {
     "version:main": "npx gulp version:main",
     "version:bot": "npx gulp version:bot",
-    "clean": "rm -rf ./dist"
+    "clean": "rm -rf ./dist && rm -rf ./src/**/dist"
   },
   "repository": {
     "type": "git",

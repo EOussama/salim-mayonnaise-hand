@@ -10,7 +10,7 @@ var version = require("./version");
  * 
  * @param {string} mode The mode of the version update (patch, minor, major, 1.36.3, 5.6.1...)
  */
-module.exports.version = function (mode) {
+module.exports.update = function (mode) {
 
   if (['patch', 'minor', 'major'].includes(mode)) {
     return version.sem(mode);

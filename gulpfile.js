@@ -5,7 +5,7 @@
 // Importing the dependencies
 var gulp = require('gulp');
 var args = require('./tasks/utils/args');
-var main = require('./tasks/main/main')
+var main = require('./tasks/main/main');
 var bot = require('./tasks/bot/bot');
 
 /**
@@ -23,7 +23,7 @@ gulp.task('version:main', function () {
 	if (type) {
 
 		// Bumping the version
-		return main.version(type);
+		return main.update(type);
 	} else {
 
 		// Raising an error
@@ -46,7 +46,7 @@ gulp.task('version:bot', function () {
 	if (type) {
 
 		// Bumping the version
-		return bot.version(type);
+		return bot.update(type);
 	} else {
 
 		// Raising an error
