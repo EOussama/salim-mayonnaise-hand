@@ -33,6 +33,6 @@ module.exports.specific = function (version) {
 
   // Proccessing the task
   return gulp.src(packageFiles)
-    .pipe(bump({ version }))
+    .pipe(bump({ version: version }))
     .pipe(gulp.dest(packageDir));
 }
