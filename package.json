@@ -2,7 +2,7 @@
   "name": "salim-the-mayonnaise-finger",
   "version": "0.0.1",
   "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
-  "main": "src/main.ts",
+  "main": "src/bot/src/main.ts",
   "scripts": {
     "clean": "rm -rf ./dist"
   },

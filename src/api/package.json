@@ -1,9 +1,13 @@
 {
   "name": "salim-the-mayonnaise-finger",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
+  "author": "EOussama",
   "license": "MIT",
+  "keywords": [
+    "discord-bot",
+    "restaurant-ranking"
+  ],
   "scripts": {
     "build": "tsc -p tsconfig.build.json",
     "format": "prettier --write \"src/**/*.ts\"",

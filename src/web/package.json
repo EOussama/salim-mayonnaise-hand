@@ -1,6 +1,11 @@
 {
   "name": "salim-the-mayonnaise-finger",
-  "version": "0.0.0",
+  "version": "0.0.1",
+  "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
+  "keywords": [
+    "discord-bot",
+    "restaurant-ranking"
+  ],
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
