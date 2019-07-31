@@ -10,3 +10,8 @@ services:
       context: ./src/bot/
       dockerfile: Dockerfile
     env_file: ./src/bot/.env
+  web:
+    image: eoussama/salim-the-mayonnaise-finger:web-0.0.1
+    build:
+      context: ./src/web/
+      dockerfile: Dockerfile

@@ -1,20 +1,23 @@
 # Getting a base image
-FROM angular/ngcontainer
+FROM node:alpine AS builder
 
 # Specifying a work directory
-# WORKDIR /usr/salim/bot
+WORKDIR /usr/salim/web
 
-# # Copying the dependencies
-# COPY ./package.json ./
+# Copying the dependencies
+COPY ./package.json ./
 
-# # Installing the dependencies
-# RUN npm install
+# Installing the dependencies
+RUN npm install
 
-# # Copying the source code
-# COPY ./ ./
+# Copying the source code
+COPY ./ ./
 
-# # Building the app
-# RUN npm run build
+# Building the app
+RUN npm run build --prod
 
-# # Starting the app
-# CMD ["npm", "start"]
+# Setting up an Nginx build
+FROM nginx:alpine
+
+# Copying the built files
+COPY --from=builder /usr/salim/web/dist/salim-the-mayonnaise-finger /usr/share/nginx/html
