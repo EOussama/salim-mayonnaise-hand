@@ -5,6 +5,6 @@ export class AppController {
 
   @Get()
   index(): string {
-    return '<h1>Salim The Mayonnaise Finger</h1>';
+    return '<h1 style="text-align: center;">Salim The Mayonnaise Finger\'s API</h1>';
   }
 }

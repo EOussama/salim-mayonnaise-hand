@@ -7,6 +7,7 @@
     "version": "npx gulp version",
     "version:main": "npx gulp version:main",
     "version:bot": "npx gulp version:bot",
+    "version:api": "npx gulp version:api",
     "clean": "rm -rf ./dist && rm -rf ./src/**/dist"
   },
   "repository": {
