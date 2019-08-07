@@ -61,7 +61,7 @@ export const processCommand = (message: Message, command: string | undefined, ar
 
 				// Sanitizing the arguments
 				const iterations: number = parseInt(Args.getArg(args, 0, 1), 10);
-				const input: string = Args.getArg(args, 1).trim();
+				const input: string = Args.getArgs(args, 1).trim();
 
 				// Validating the iteration argument
 				Args.validateArgs(

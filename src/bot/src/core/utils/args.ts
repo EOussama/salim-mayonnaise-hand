@@ -11,6 +11,16 @@ import InvalidArgumentError from './../errors/InvalidArgumentError';
 export const getArg = (args: any[], index: number, def: any = ''): string => hasArgs(args, index) ? args[index] : def;
 
 /**
+ * Extracts a given arguments
+ *
+ * @param args The arguments to extract from
+ * @param index The index where to start the extraction from
+ * @param def The fallback value of the extraction
+ *
+ */
+export const getArgs = (args: any[], index: number, def: any = ''): string => args.slice(index).join(' ').toString();
+
+/**
  * Checks the validity of arguments
  *
  * @param args The arguments to check
