@@ -4,6 +4,7 @@
   "description": "A Discord bot that documents our struggle with finding the perfect place for lunch.",
   "main": "src/bot/src/main.ts",
   "scripts": {
+    "assets": "npx gulp assets",
     "version": "npx gulp version",
     "version:main": "npx gulp version:main",
     "version:bot": "npx gulp version:bot",

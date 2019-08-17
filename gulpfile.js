@@ -108,3 +108,15 @@ gulp.task('version:api', function () {
 		console.error('[ERROR]: The “version” tasks is missing the bump argument (patch, minor, major, 1.36.3, 5.6.1...)');
 	}
 });
+
+/**
+ * Updates the assets library
+ */
+gulp.task('assets', function () {
+
+	// API assets
+	api.assets();
+
+	return gulp.src('.')
+		.pipe(nop());
+});

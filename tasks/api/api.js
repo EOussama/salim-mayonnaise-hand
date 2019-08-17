@@ -3,7 +3,15 @@
  */
 
 // Importing the dependencies
+var assets = require('./assets');
 var version = require("./version");
+
+/**
+ * Updates the Discord API's assets
+ */
+module.exports.assets = function () {
+  return assets.copy();
+}
 
 /**
  * Updates the Discord API's version
