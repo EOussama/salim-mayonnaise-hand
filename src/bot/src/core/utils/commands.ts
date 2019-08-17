@@ -16,98 +16,102 @@ export const processCommand = (message: Message, command: string | undefined, ar
 
 	try {
 
-		// Checking the command
-		switch (command) {
+		// Checking if the command is valid
+		if (command) {
 
-			/**
-			 * Command: about
-			 *
-			 * Usage:
-			 * 	-	/about
-			 *
-			 * Description: Displays general information about the bot
-			 */
-			case 'about': {
-				console.log('/about');
-				break;
-			}
+			// Checking the command
+			switch (command.toLowerCase()) {
 
-			/**
-			 * Command: help
-			 *
-			 * Usage:
-			 * 	-	/help
-			 *
-			 * Description: Displays a generic help manual about how to properly use the bot
-			 */
-			case 'help': {
-				console.log('/help');
-				break;
-			}
+				/**
+				 * Command: about
+				 *
+				 * Usage:
+				 * 	-	/about
+				 *
+				 * Description: Displays general information about the bot
+				 */
+				case 'about': {
+					console.log('/about');
+					break;
+				}
 
-			/**
-			 * Command: echo
-			 *
-			 * Arguments:
-			 * 	-	iterations: number
-			 * 	-	input: string
-			 *
-			 * Usage:
-			 * 	- /echo 3 salim
-			 *
-			 * Description: Returns and output respectively at a given iteration
-			 */
-			case 'echo': {
+				/**
+				 * Command: help
+				 *
+				 * Usage:
+				 * 	-	/help
+				 *
+				 * Description: Displays a generic help manual about how to properly use the bot
+				 */
+				case 'help': {
+					console.log('/help');
+					break;
+				}
 
-				// Sanitizing the arguments
-				const iterations: number = parseInt(Args.getArg(args, 0, 1), 10);
-				const input: string = Args.getArgs(args, 1).trim();
+				/**
+				 * Command: echo
+				 *
+				 * Arguments:
+				 * 	-	iterations: number
+				 * 	-	input: string
+				 *
+				 * Usage:
+				 * 	- /echo 3 salim
+				 *
+				 * Description: Returns and output respectively at a given iteration
+				 */
+				case 'echo': {
 
-				// Validating the iteration argument
-				Args.validateArgs(
-					iterations && !isNaN(iterations) && iterations > 0,
-					'The iterations argument must be a valid positive number!',
-				);
+					// Sanitizing the arguments
+					const iterations: number = parseInt(Args.getArg(args, 0, 1), 10);
+					const input: string = Args.getArgs(args, 1).trim();
 
-				// Validating the input argument
-				Args.validateArgs(
-					input && input.length > 0,
-					'You must provide a valid input argument!',
-				);
+					// Validating the iteration argument
+					Args.validateArgs(
+						iterations && !isNaN(iterations) && iterations > 0,
+						'The iterations argument must be a valid positive number!',
+					);
 
-				// Preparing the output variable
-				const output: string = new Array(iterations)
-					.fill(input)
-					.join(' ')
-					.substring(0, 2000);
+					// Validating the input argument
+					Args.validateArgs(
+						input && input.length > 0,
+						'You must provide a valid input argument!',
+					);
 
-				// Sending the message
-				message.channel.send(output);
+					// Preparing the output variable
+					const output: string = new Array(iterations)
+						.fill(input)
+						.join(' ')
+						.substring(0, 2000);
 
-				break;
-			}
+					// Sending the message
+					message.channel.send(output);
 
-			/**
-			 * Command: ping
-			 *
-			 * Usage:
-			 * 	-	/ping
-			 *
-			 * Description: Returns “pong”
-			 */
-			case 'ping': {
+					break;
+				}
 
-				// Sending the message
-				message.channel.send('pong');
+				/**
+				 * Command: ping
+				 *
+				 * Usage:
+				 * 	-	/ping
+				 *
+				 * Description: Returns “pong”
+				 */
+				case 'ping': {
 
-				break;
-			}
+					// Sending the message
+					message.channel.send('pong');
 
-			// Catching all invalid commands
-			default: {
+					break;
+				}
 
-				// Throwing InvalidCommandError
-				throw new InvalidCommandError(`“**/${command}**” is not a valid command!`);
+				// Catching all invalid commands
+				default: {
+
+					// Throwing InvalidCommandError
+					throw new InvalidCommandError(`“**/${command}**” is not a valid command!`);
+				}
 			}
 		}
 	} catch (error) {

@@ -48,8 +48,7 @@ export class Bot {
 					// Extracting the arguments
 					const args = message.content
 						.slice(prefix.length)
-						.split(' ')
-						.map((arg) => arg.toLocaleLowerCase());
+						.split(' ');
 
 					// Getting the command
 					const cmd = args.shift();
