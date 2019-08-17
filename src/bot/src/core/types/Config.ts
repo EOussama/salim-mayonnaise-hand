@@ -2,12 +2,13 @@
  * The type definition of a configuration object
  */
 export type Config = {
-	meta: {
-		name: string,
-		version: string,
-	},
 	channels: {
 		general: string,
 		salim: string,
 	},
+	meta: {
+		name: string,
+		version: string,
+	},
+	prefix: string,
 };

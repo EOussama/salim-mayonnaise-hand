@@ -40,7 +40,7 @@ export class Bot {
 			client.on('message', (message) => {
 
 				// Defining the prefix
-				const prefix = '/';
+				const prefix = config.prefix;
 
 				// Detecting if a command was issued
 				if (message.content.startsWith(prefix) && !message.author.bot) {

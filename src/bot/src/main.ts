@@ -28,6 +28,7 @@ import { Config } from './core/types/Config';
 			name: process.env.META_NAME || '',
 			version: process.env.META_VERSION || '',
 		},
+		prefix: process.env.PREFIX || '/',
 	};
 
 	// Bootstraping the bot
